@@ -5,7 +5,7 @@ body {
   margin:           0px;
 }
 
-.header {
+header {
   background-color: #675c47;
   margin:           10px;
   height:           108px;
@@ -27,7 +27,7 @@ body {
   animation: rotate 2s linear infinite; /* 应用名为 "rotate" 的动画，2秒完成一次，线性运动，无限循环 */
 }
 
-.main {
+section.main {
   display: table-cell; /* 显示方式 */
   vertical-align: top;  /* 垂直对齐: 顶端对齐 */
   background:       #efe5d0 url(images/background.gif) top left; /* 背景颜色 */
@@ -36,7 +36,7 @@ body {
   margin:           0px 10px 10px 10px;
 }
 
-.sidebar {
+aside {
   display: table-cell;  /* 显示方式 */
   vertical-align: top;   /*垂直对齐: 顶端对齐 */
   background:       #efe5d0 url(images/background.gif) bottom right; /* 背景颜色 */
@@ -97,7 +97,7 @@ div.tableRow {
 	display: table-row;
 }
 
-.drinks {
+section.drinks {
   display: table-cell;
   background-color: #efe5d0;
   padding: 15px;
@@ -129,3 +129,40 @@ div.left-header {
 .coupon a, img{
 	border: none;
 }
+/* added section#blog for blog */
+section.main, section.blog {
+  display: table-cell;
+  background:       #efe5d0 url(images/background.gif) top left;
+  font-size:        105%;
+  padding:          15px;
+  vertical-align: top;
+}
+nav {
+  background-color: #efe5d0;
+  margin: 10px 10px 0px 10px;
+}
+
+nav ul {
+	margin: 0px;
+	list-style-type: none;
+	padding: 5px 0px 5px 5px;
+}
+
+nav ul li {
+	display: inline;
+	padding: 5px 10px 5px 10px;
+}
+
+ul li a:link, nav ul li a:visited {
+	color: #954b4b;
+	border-bottom: none;
+	font-weight: bold;
+/*
+	text-shadow: 1px 1px 3px #e2c2c2; 
+	text-transform: uppercase;
+*/
+}
+nav ul li.selected {
+	background-color: #c8b99c;
+}
+
