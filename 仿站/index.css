@@ -1,0 +1,62 @@
+.captionslide {
+  padding-top: 50px;
+  padding-bottom: 75px;
+  background: rgb(243, 243, 243);
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, main, nav, section, summary {
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+section {
+  display: block;
+  unicode-bidi: isolate;
+}
+html, body {
+  line-height: 1.15;
+  font-family: Roboto, "Noto Sans KR", "Malgun Gothic", "맑은 고딕", "Nanum Gothic", "나눔 고딕", "맑은 고딕", "Malgun Gothic", 돋움, Dotum, "Apple SD Gothic Neo", Helvetica, sans-serif;
+  font-size: 62.5%;
+  text-size-adjust: 100%;
+  word-break: keep-all;
+  box-sizing: border-box;
+}
+::after, ::before {
+  box-sizing: border-box;
+}
+.caption-style-2 {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+ol, ul {
+  list-style: none;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+.caption-style-2::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.captionslide {
+  padding-top: 50px;
+  padding-bottom: 75px;
+  background: rgb(243, 243, 243);
+}

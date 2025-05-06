@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh">
+  <head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#fff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                                 maximum-scale=1.0, user-scalable=no">
+  <title>www.instagram.com</title>
+  </head>
+  <body style="font-family: 'Segoe UI',Arial,'Microsoft Yahei',sans-serif; font-size: 75%">
+    <div class="bing-search hidden" id="neterror-bing-search">
+      <div class="search-input" jsdisplay="edge_vnext.showSearchBox">
+        <input id="bing-input" type="text" jsvalues=".placeholder:edge_vnext.searchBoxHint" onkeydown="handleKeyDown(event);">
+        <button class="search-icon" onclick="bingSearchClick();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+            <path d="M10.6699 2.75C14.674 2.75 17.9199 5.99594 17.9199 10C17.9199 11.7319 17.3127 13.3219 16.2995 14.5688L21.2003 19.4697C21.4931 19.7626 21.4931 20.2374 21.2003 20.5303C20.934 20.7966 20.5173 20.8208 20.2237 20.6029L20.1396 20.5303L15.2387 15.6295C13.9918 16.6427 12.4018 17.25 10.6699 17.25C6.66586 17.25 3.41992 14.0041 3.41992 10C3.41992 5.99594 6.66586 2.75 10.6699 2.75ZM10.6699 4.25C7.49428 4.25 4.91992 6.82436 4.91992 10C4.91992 13.1756 7.49428 15.75 10.6699 15.75C13.8456 15.75 16.4199 13.1756 16.4199 10C16.4199 6.82436 13.8456 4.25 10.6699 4.25Z" fill="white"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="top-sites" jsdisplay="(edge_vnext.showTopsites &amp;&amp; topSites &amp;&amp; topSites.length)">
+        <div class="site-item" tabindex="0" jsselect="topSites" jsvalues=".url:url" onclick="handleTopSiteClick(this.url);" onkeydown="handleTopSiteKeydown(event,this.url)">
+          <div class="site-image">
+            <img jsvalues=".src:faviconUrl">
+          </div>
+          <div class="title" jscontent="title"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="left-footer">
+        <div class="edge-logo" alt=""></div>
+        <div class="edge-branding-text" jsselect="footer" jsvalues=".innerHTML:msg"></div>
+      </div>
+    </div>
+    <div id="sub-frame-error">
+      <!-- Show details when hovering over the icon, in case the details are
+           hidden because they're too large. -->
+      <div class="icon" jseval="updateIconClass(this.classList, iconClass)"></div>
+      <div id="sub-frame-error-details" jsselect="summary" jsvalues=".innerHTML:msg"></div>
+    </div>
+    <div class="bing-search hidden" id="neterror-bing-search">
+      <div class="search-input" jsdisplay="edge_vnext.showSearchBox">
+        <input id="bing-input" type="text" jsvalues=".placeholder:edge_vnext.searchBoxHint" onkeydown="handleKeyDown(event);">
+        <button class="search-icon" onclick="bingSearchClick();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+            <path d="M10.6699 2.75C14.674 2.75 17.9199 5.99594 17.9199 10C17.9199 11.7319 17.3127 13.3219 16.2995 14.5688L21.2003 19.4697C21.4931 19.7626 21.4931 20.2374 21.2003 20.5303C20.934 20.7966 20.5173 20.8208 20.2237 20.6029L20.1396 20.5303L15.2387 15.6295C13.9918 16.6427 12.4018 17.25 10.6699 17.25C6.66586 17.25 3.41992 14.0041 3.41992 10C3.41992 5.99594 6.66586 2.75 10.6699 2.75ZM10.6699 4.25C7.49428 4.25 4.91992 6.82436 4.91992 10C4.91992 13.1756 7.49428 15.75 10.6699 15.75C13.8456 15.75 16.4199 13.1756 16.4199 10C16.4199 6.82436 13.8456 4.25 10.6699 4.25Z" fill="white"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="top-sites" jsdisplay="(edge_vnext.showTopsites &amp;&amp; topSites &amp;&amp; topSites.length)">
+        <div class="site-item" tabindex="0" jsselect="topSites" jsvalues=".url:url" onclick="handleTopSiteClick(this.url);" onkeydown="handleTopSiteKeydown(event,this.url)">
+          <div class="site-image">
+            <img jsvalues=".src:faviconUrl">
+          </div>
+          <div class="title" jscontent="title"></div>
+        </div>
+      </div>
+    </div>
+    <script>var loadTimeDataRaw = {"details":"详细信息","errorCode":"ERR_CONNECTION_TIMED_OUT","fontfamily":"'Segoe UI',Arial,'Microsoft Yahei',sans-serif","fontfamilyMd":"'Segoe UI',Arial,'Microsoft Yahei',sans-serif","fontsize":"75%","footer":{"msg":"Microsoft Edge"},"heading":{"msg":"嗯… 无法访问此页面"},"hideDetails":"隐藏详细信息","iconClass":"icon-elixir-thinking","is_windows_xbox_sku":"false","language":"zh","reloadButton":{"msg":"刷新","reloadUrl":"https://www.instagram.com/p/DJJTGl5PSwy/?img_index=1"},"suggestionsDetails":[{"body":"请检查你的网络电缆、调制解调器和路由器。","header":"检查 Internet 连接"},{"body":"如果它已被列为允许访问网络的程序，请尝试\n将其从列表中删除，然后重新添加。","header":"要允许 Microsoft Edge 访问网络，请在防火墙或防病毒软件中进行\n          设置。"},{"body":"转到\n          “MICROSOFT EDGE”菜单 >\n          \u003Cspan jscontent=\"settingsTitle\">设置\u003C/span>\n          >\n          \u003Cspan jscontent=\"advancedTitle\">显示高级设置\u003C/span>\n          >\n          \u003Cspan jscontent=\"proxyTitle\">更改代理设置\u003C/span>\n          >\n          LAN 设置\n          并取消选中“为 LAN 使用代理服务器”复选框。","header":"如果使用代理服务器:"}],"suggestionsSummaryList":[{"summary":"检查连接"},{"summary":"\u003Ca href=\"#buttons\" onclick=\"toggleHelpBox()\">检查代理和防火墙\u003C/a>"}],"suggestionsSummaryListHeader":"请尝试：","summary":{"msg":"\u003Cstrong jscontent=\"hostName\">www.instagram.com\u003C/strong> 响应时间太长"},"textdirection":"ltr","title":"www.instagram.com"};</script>
+  </body>
+</html>
