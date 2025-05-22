@@ -3,128 +3,24 @@
   <title>서울대학교</title>
   <link rel="stylesheet" href="html.css" media="all">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <style>
-    /* 新增轮播容器样式 */
-    .ly-section.captionslide {
-      position: relative;
-      padding-left: 0;
-    }
-    .slick-slide {
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-    .slick-list {
-      margin: 0 !important;
-      overflow: visible;
-    }
-    .slick-track {
-      margin-left: 0;
-    }
-    /* 箭头定位样式 */
-    .slick-arrow {
-      position: absolute;
-      top: -50px;
-      width: 40px;
-      height: 40px;
-      z-index: 10;
-      background: rgba(255,255,255,0.9);
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .slick-prev {
-      left: calc(100% - 100px);
-    }
-    .slick-next {
-      right: 20px;
-    }
-    /* 图片自适应 */
-    .slick-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  /* 可以添加一个默认的选择器占位，避免报错 */
-  body {
-    margin: 0;
-  }
-  .caption {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.9);
-        opacity: 0;
-        transition: all 0.3s;
-        pointer-events: none;
-    }
-    .caption.active {
-        opacity: 1;
-    }
-    .caption-text {
-        padding: 20px;
-        color: white;
-    }
-    /* 添加点击手型 */
-    .caption-item {
-        position: relative;
-        cursor: pointer;
-    }
-  </style>
+
 </head>
 <body>
   ...
   <!-- 在body结束前添加初始化脚本 -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script>
-    $(document).ready(function(){
-        $('.caption-item').click(function(e){
-            e.preventDefault();
-            $(this).find('.caption').toggleClass('active');
-        });
-        
-        // 点击外部关闭
-        $(document).click(function(e){
-            if (!$(e.target).closest('.caption-item').length) {
-                $('.caption').removeClass('active');
-            }
-        });
-    });
-    $(document).ready(function(){
-        $('.instaslide').slick({
-            infinite: true,
-            slidesToShow: 5,   // 固定显示5个
-            slidesToScroll: 2, // 每次滑动2个
-            arrows: true,
-            prevArrow: $('.slick-prev'),
-            nextArrow: $('.slick-next'),
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: { slidesToShow: 4 }
-                },
-                {
-                    breakpoint: 992,
-                    settings: { slidesToShow: 3 }
-                },
-                {
-                    breakpoint: 768,
-                    settings: { slidesToShow: 2 }
-                }
-            ]
-        });
-    });
-</script>
 <section class="ly-section captionslide ">
   <ul class="instaslide caption-style-2 slick-initialized slick-slider">
-    <button class="slick-prev slick-arrow slick-disabled" type="button" aria-disabled="true" style>이전</button>
     <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3200px; transform: translate3d(0px, 0px, 0px);"><li class="slick-slide slick-current slick-active" style="width: 320px;" data-tabindex="0" data-slick-index="0" aria-hidden="false">
-      <button class="slick-prev slick-arrow" type="button" aria-disabled="false">이전</button>
       <a href="https://www.instagram.com/p/DJk7xCcyg27/?img_index=1" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/日常生活.jpg" alt="서울대 축제, 함께 즐길 준비 되셨나요?">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+          <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+          <div class="white-circle"></div>
+        </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -139,7 +35,10 @@
       <a href="https://www.instagram.com/p/DJbU-AVvHMd/?img_index=1" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/公共项目.jpg" alt="비가 와도 굴하지 않는 서울대 러너들!">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -149,20 +48,17 @@
           </div>
         </div>
         <script>
-          // 新增点击交互
-          $(document).ready(function() {
-            $('.clickable-img').click(function(e) {
-              e.preventDefault(); // 阻止默认链接跳转
-              $(this).siblings('.caption').toggleClass('active');
-            });
-            
-            // 点击其他地方关闭
-            $(document).click(function(e) {
-              if (!$(e.target).closest('.caption-item').length) {
-                $('.caption').removeClass('active');
-              }
-            });
-          });
+        
+        $(document).ready(function () {
+      $('.instaslide').slick({
+        slidesToShow: 5, // 每页显示 5 个图片
+        slidesToScroll: 1, // 每次滚动 1 个图片
+        infinite: true, // 无限循环
+        arrows: true, // 显示箭头导航
+        dots: false // 不显示分页圆点
+      });
+    });
+       
         </script>
         <div class="outline"></div>
       </a>
@@ -170,7 +66,11 @@
       <a href="https://www.instagram.com/p/DJYr1xcuwz3/" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/楼梯.png" alt="서울대학교 2025 봄축제 〈SNUFESTIVAL: Spring-kle〉">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -185,7 +85,11 @@
       <a href="https://www.instagram.com/snu.official/" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/微笑.png" alt="나… 사실 우리 전공 좋아했나…?">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -200,7 +104,11 @@
       <a href="https://www.miricanvas.com/v2/design/14jo89t" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/绿色五月.jpg" alt="제6회 SNU ‘도서관 옆’ 공공미술 프로젝트 작품을 공모합니다!">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -215,7 +123,11 @@
       <a href="https://www.youtube.com/watch?v=7t5ezOh8444&amp;list=PLXY68w-grSxtCkZ5aFi8jyMS6VLXaN-wF" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/鱿鱼游戏.jpg" alt="[서막] 샤대에 오징어게임이? 한날한시에 잡혀간 그들">
-          <div class="snsicon youtube">유튜브</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon youtube"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -230,7 +142,11 @@
       <a href="https://www.instagram.com/p/DJJTGl5PSwy/?img_index=1" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/秘密通道.png" alt="이동 약자를 위한 계단 정복 활동">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -249,7 +165,11 @@
       <a href="https://www.instagram.com/p/DJGovp1v8OK/?img_index=1" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/电子邮件.jpeg" alt="바쁜 하루 속, 문득 웃음 짓게 되는 순간들">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -264,7 +184,11 @@
       <a href="https://www.instagram.com/p/DJEGCRwpAP1/" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/23.png" alt="#서울대학사력 2025년 5월">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -279,7 +203,11 @@
       <a href="https://www.instagram.com/p/DI_BrOEPYAt/" target="_blank" title="새창으로 열림" rel="noopener noreferrer" data-tabindex="-2">
         <div class="caption-item">
           <img src="images/捷径.png" alt="서울대 인문대에 비밀의 통로가 있다면 믿으시겠어요?">
-          <div class="snsicon instagram">인스타그램</div>
+          <div class="camera-container">
+            <img src="images/12.png" style="position: absolute; top: auto; bottom: 10%; left: 10%; width: 8%; height: auto;">
+            <div class="white-circle"></div>
+          </div>
+          <div class="snsicon instagram"></div>
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
@@ -291,13 +219,11 @@
         <div class="outline"></div>
       </a>
     </li></div></div>
-    <button class="slick-next slick-arrow" type="button" style  aria-disabled="false">다음</button>
-    <::after></::after>
   </ul>
 </section>
-<div class="ly-container common-linebanner" style="background: #fddeee;">
+<div class="ly-container common-linebanner">
   <a href="https://www.snu.or.kr/snushine" class="inner" target="blank" title="새 창으로 열기" rel="noopener noreferrer">
-    <img src="images/捐款.jpg" alt="샤인기부, 당신이 만드는 빛나는 변화, 샤인 굿즈 받기" class="only-mobile">
+    <img src="images/捐款.jpg"  class="only-mobile">
   </a>
 </div>
 </html>

@@ -1,350 +1,149 @@
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, main, nav, section, summary
-{
-    display: block;
-    unicode-bidi: isolate;
-}
-* {
-    box-sizing: border-box;
-}
-element.style {
-    background: #fddeee;
-}
-.common-linebanner {
-    display: block;
-    width: 100%;
-}
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-.captionslide {
-    padding-top: 50px;
-    padding-bottom: 1px;
-    padding-bottom: 75px;
-    background: #f3f3f3;
-}
-section {
-    display: block;
-    unicode-bidi: isolate;
-}
-html, body {
-    line-height: 1.15;
-    font-family: 'Roboto', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Nanum Gothic', '나눔 고딕', '맑은 고딕', Malgun Gothic, '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif;
-    font-size: 62.5%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    word-break: keep-all;
-    box-sizing: border-box;
-}
-*::after, *::before {
-    box-sizing: border-box;
-}
+.ly-section.captionslide {
+    position: relative;
+    padding-left: 0;
+  }
+  .slick-slide {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
   .slick-list {
-    margin: 0 -10px;
+    margin: 0 !important;
     overflow: visible;
   }
   .slick-track {
-    display: flex;
-    align-items: center;
+    margin-left: 0;
   }
-  .instaslide {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative; /* 新增定位上下文 */
-}
-
-/* 新增箭头样式 */
-.slick-arrow {
-    position: absolute;
-    top: -50px;
-    width: 40px;
-    height: 40px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    z-index: 10;
-    transition: all 0.3s;
-}
-
-.slick-prev {
+  .slick-prev {
     left: calc(100% - 100px);
-}
-
-.slick-next {
+  }
+  .slick-next {
     right: 20px;
+  }
+  ly-section.captionslide,
+.instaslide {
+  margin: 0;
+  padding: 0;
 }
-
-.slick-slide {
-    margin: 0 5px; /* 减小间距 */
-    opacity: 1 !important;
-}
-.instaslide .slick-arrow {
-    position: absolute;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    top: -30px;
-    font-size: 1px;
-    color: rgba(0, 0, 0, 0);
-    z-index: 1;
-    width: 50px;
-    height: 15px;
-}
-button, [type='button'], [type='reset'], [type='submit'] {
-    -webkit-appearance: button;
-    appearance: button;
-}
-button {
-    cursor: pointer;
-    background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-button, input {
-    overflow: visible;
-}
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-}
-* {
-    box-sizing: border-box;
-}
-button {
-    appearance: auto;
-    text-rendering: auto;
-    color: buttontext;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: center;
-    cursor: default;
-    box-sizing: border-box;
-    background-color: buttontext;
-    margin: 0em;
-    padding-block: 1px;
-    padding-inline: 6px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonborder;
-    border-image: initial;
-}
-.caption-style-2 {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-}
-.slick-slider {
-    position: relative;
+  /* 图片自适应 */
+  .slick-slide img {
+    width: 100%;
+    height: auto;
     display: block;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
+  }
+/* 可以添加一个默认的选择器占位，避免报错 */
+body {
+  margin: 0;
 }
-ol, ul {
-    list-style: none;
-}
-用户代理样式表
-ul {
-    list-style-type: disc;
-}
-html, body {
-    line-height: 1.15;
-    font-family: 'Roboto', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Nanum Gothic', '나눔 고딕', '맑은 고딕', Malgun Gothic, '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif;
-    font-size: 62.5%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    word-break: keep-all;
-    box-sizing: border-box;
-}
-*::after, *::before {
-    box-sizing: border-box;
-}
-*::after, *::before {
-    box-sizing: border-box;
-}
-.instaslide .slick-arrow {
+.caption-item {
+    position: relative; /* 确保子元素绝对定位相对于此元素 */
+    overflow: hidden; /* 防止遮罩溢出 */
+  }
+  
+  .caption {
     position: absolute;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    top: -30px;
-    font-size: 1px;
-    color: rgba(0, 0, 0, 0);
-    z-index: 1;
-    width: 50px;
-    height: 15px;
-}
-button, [type='button'], [type='reset'], [type='submit'] {
-    -webkit-appearance: button;
-    appearance: button;
-}
-button {
-    cursor: pointer;
-    background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-button, input {
-    overflow: visible;
-}
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-}
-* {
-    box-sizing: border-box;
-}
-用户代理样式表
-button {
-    appearance: auto;
-    text-rendering: auto;
-    color: buttontext;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: center;
-    cursor: default;
-    box-sizing: border-box;
-    background-color: buttonface;
-    margin: 0em;
-    padding-block: 1px;
-    padding-inline: 6px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonborder;
-    border-image: initial;
-}
-.caption-style-2 {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-}
-.slick-slider {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-ol, ul {
-    list-style: none;
-}
-ul {
-    list-style-type: disc;
-}
-html, body {
-    line-height: 1.15;
-    font-family: 'Roboto', 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Nanum Gothic', '나눔 고딕', '맑은 고딕', Malgun Gothic, '돋움', Dotum, 'Apple SD Gothic Neo', Helvetica, sans-serif;
-    font-size: 62.5%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    word-break: keep-all;
-    box-sizing: border-box;
-}
-.slick-arrow {
-    font-size: 24px;
-    line-height: 40px;
-    color: #333;
-}
-.instaslide .slick-arrow.slick-prev {
-    background: url('https://www.snu.ac.kr/_skin/kor/layout/image/icon-videos-arrow_lg.png') center/contain no-repeat;
-    background-color: transparent;
-    right: 80px; /* 保持透明背景 */
-}
-
-.instaslide .slick-arrow.slick-next {
-    background: url('https://www.snu.ac.kr/_skin/kor/layout/image/icon-videos-arrow_lg.png') center/contain no-repeat;
-    transform: rotate(180deg); /* 旋转图片实现右箭头 */
-    background-color: transparent; /* 保持透明背景 */
-    left: 80px;
-}
-.instaslide .slick-arrow {
-    position: absolute;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    top: -30px;
-    font-size: 1px;
-    color: rgba(0, 0, 0, 0);
-    z-index: 1;
-    width: 50px;
-    height: 15px;
-}
-button {
-    cursor: pointer;
-    background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-button, input {
-    overflow: visible;
-}
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-}、
-/* 文字层样式 */
-.caption {
+    top: 55;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 黑色遮罩，透明度 0.7 */
+    opacity: 0; /* 初始状态隐藏 */
+    transition: opacity 0.3s ease; /* 添加过渡效果，使显示更平滑 */
+    pointer-events: none; /* 防止遮罩干扰鼠标事件 */
+  }
+  
+  .caption .blur {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
+    /* 若需要模糊效果，可以添加 filter 属性 */
+    /* filter: blur(5px); */ 
   }
   
-  .caption.active {
-    opacity: 1;
-  }
-  
-  /* 文字内容样式 */
-  .caption-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .caption .caption-text {
+    position: relative;
     padding: 20px;
     color: white;
+    z-index: 1; /* 确保文字显示在模糊层之上 */
   }
   
-  /* 图片添加点击指针 */
-  .clickable-img {
-    cursor: pointer;
+  /* 悬停效果：鼠标悬停在 .caption-item 时显示遮罩 */
+  .caption-item:hover .caption {
+    opacity: 1; /* 悬停时显示遮罩 */
   }
+  .caption-item a {
+    display: none;
+  }
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 100%;
+    flex-shrink: 0;
+}
+.arrow-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 50px 0;
+}
+.overlay-image {
+  position: absolute;
+
+}
+
+/* 确保没有这样的样式 */
+
+
+/* 或者针对特定类名的样式 */
+.overlay-image {
+  display: block; /* 确保图片显示 */
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 8%;
+  height: 0;
+  padding-bottom: 8%;
+  opacity: 1; 
+}
+
+.camera-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.white-circle {
+  position: absolute;
+  /* 定位到左下角 */
+  bottom: 7%; 
+  left: 6.5%; 
+  /* 缩小圆形，可按需调整 */
+  width: 15%; 
+  height: 0;
+  padding-bottom: 15%; 
+  background-color: white;
+  border-radius: 50%;
+  /* 可调整透明度，让相机图片可见 */
+  opacity: 0.6; 
+}
+.only-mobile {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: -350px;
+}
+/* ... existing code ... */
+
+.scaled-image {
+  width: 500%;
+  height: auto;
+}
+
+/* ... existing code ... */
